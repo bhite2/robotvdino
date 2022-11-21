@@ -1,7 +1,8 @@
-class Dino:
+class Dinosaur:
     def __init__(self):
         self.name = ""
         self.health = ()
-    
-    def attack(self, name, attack_power):
-        pass
+        self.attack_power = ()
+        
+    def attack_robot(self, name, attack_power):
+        

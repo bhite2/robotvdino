@@ -8,7 +8,9 @@ class Battlefield:
         
     def run_game(self):
         self.display_welcome()
+        print("")
         self.battle_phase()
+        print("")
         self.display_winner()
 
     def display_welcome(self):
@@ -20,13 +22,23 @@ class Battlefield:
 
     def battle_phase(self):
         # I will need a loop that stops at which character gets to zero first
-        self.robot.attack(self.dinosaur)
-        self.dinosaur.attack_robot(self.robot)
-    
+        while self.robot.health > 0 and self.dinosaur.health > 0:
+            if self.robot.health > 0:
+                self.robot.attack(self.dinosaur)
 
+            elif self.robot.health <= 0:
+                print(f"{self.robot.name} is down and knocked out.")
+
+            if self.dinosaur.health > 0:
+                self.dinosaur.attack_robot(self.robot)
+            
+            elif self.dinosaur.health <= 0:
+                print(f"{self.dinosaur.name} is down and knocked out.")
+
+            
     def display_winner(self):
         print("We have a winner")
-        if len(self.robot) > 0:
+        if self.robot.health > 0:
             print("Robot wins!!!!!!")
 
         else:

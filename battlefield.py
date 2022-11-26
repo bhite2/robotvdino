@@ -25,4 +25,11 @@ class Battlefield:
     
 
     def display_winner(self):
-        pass
+        print("We have a winner")
+        if len(self.robot) > 0:
+            print("Robot wins!!!!!!")
+
+        else:
+            print("Dinosaur wins!!!!!!")
+
+
